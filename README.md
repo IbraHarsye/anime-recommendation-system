@@ -128,8 +128,21 @@ Kelebihan pendekatan *content-based filtering* ini adalah dapat memberikan rekom
 
 Output dari pendekatan ini adalah Top-N anime dengan genre yang sama (beberapa judul anime memiliki nilai *cosine similarity* tertinggi)
 
-![top-N content baset filtering](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/a7cfce32-87e4-4b8b-a50b-af17bc7fd244)
-Gambar 3. Top 10 Anime yang direkomendasikan dari *keyword* "The Last: Naruto the Movie"
+Tabel 2. Top 10 Anime yang direkomendasikan dari *keyword* "The Last: Naruto the Movie"
+
+| name                            | genre                                          | type    | rating |
+|---------------------------------|------------------------------------------------|---------|--------|
+| Ranma ½ OVA                     | Comedy, Martial Arts, Romance, Shounen         | OVA     | 7.87   |
+| Ogami Matsugorou                | Action, Martial Arts, Romance, School, Shounen | OVA     | 6.08   |
+| Kyutai Panic Adventure!         | Action, Martial Arts, Shounen, Super Power     | Special | 5.21   |
+| Princess Army: Wedding★Combat   | Action, Martial Arts, Romance, Shoujo          | OVA     | 5.48   |
+| Shin Karate Jigoku-hen          | Action, Martial Arts                           | OVA     | 5.87   |
+| Shinken Densetsu: Tight Road    | Action, Martial Arts                           | TV      | 5.67   |
+| Hokuto no Ken: Legend of Heroes | Action, Martial Arts                           | Special | 6.18   |
+| Toushinden                      | Action, Martial Arts                           | OVA     | 5.43   |
+| Geori-eui Mubeopja              | Action, Martial Arts                           | Movie   | 5.53   |
+| Feng Ji Yun Nu                  | Action, Martial Arts                           | OVA     | 4.76   |
+
 
 ### *Collaborative Filtering*
 
@@ -139,11 +152,21 @@ Perbedaan pendekatan ini dengan *content-based filtering* adalah adanya pola pre
 
 Kelebihan dari *Collaborative Filtering* ini adalah kemampuannya dalam menemukan pola preferensi pelanggan yang kompleks dan merekomendasikan produk berdasarkan preferensi serupa dari pelanggan lain. Namun kekurangan dari pendekatan ini adalah adanya masalah jika pelanggan baru atau produk baru tidak memiliki cukup interaksi untuk memberikan rekomendasi yang akurat.
 
-Output dari pendekatan ini adalah Top-N anime yang mirip dengan anime yang sebelumnya sudah ditonton dan diberi rating.
+Output dari pendekatan ini adalah Top-N anime yang mirip dengan anime yang sebelumnya sudah pengguna tonton dan diberi rating.
 
-![top n collaborative filtering](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/dc86fa9d-a51f-41b6-a79f-fc58f56ada63)
-Gambar 4. Top 10 Anime yang direkomendasikan untuk user 36391
-
+Tabel 3. Top 10 Anime yang direkomendasikan untuk user 36391
+| name                          | genre                                                             |
+|-------------------------------|-------------------------------------------------------------------|
+| Steins;Gate                   | Sci-Fi, Thriller                                                  |
+| Gintama                       | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen      |
+| Sen to Chihiro no Kamikakushi | Adventure, Drama, Supernatural                                    |
+| Cowboy Bebop                  | Action, Adventure, Comedy, Drama, Sci-Fi, Space                   |
+| One Punch Man                 | Action, Comedy, Parody, Sci-Fi, Seinen, Super Power, Supernatural |
+| Mononoke Hime                 | Action, Adventure, Fantasy                                        |
+| Great Teacher Onizuka         | Comedy, Drama, School, Shounen, Slice of Life                     |
+| Boku dake ga Inai Machi       | Mystery, Psychological, Seinen, Supernatural                      |
+| Hellsing Ultimate             | Action, Horror, Military, Seinen, Supernatural, Vampire           |
+| Baccano!                      | Action, Comedy, Historical, Mystery, Seinen, Supernatural         |
 
 ## Evaluation
 Pada tahap evaluasi, Digunakan Precision pada pendekatan *content-based filtering* dan Root Mean Squared Error (RMSE) pada pendekatan *collaborative filtering* sebagai *metrics evaluation*. Berikut penjelasannya :
@@ -172,7 +195,7 @@ dimana:
 - n = jumlah data
 
 ![RMSE](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/a56ee835-75e1-4432-a45b-52ca8e10e403)
-Gambar 5. Plot Metrik Evaluasi RMSE pada Model RecommenderNet
+Gambar 3. Plot Metrik Evaluasi RMSE pada Model RecommenderNet
 
 Training dilakukan sebanyak 6 epoch dikarenakan pada epoch ke 6 RMSE model meningkat dan model akan berhenti melakukan training. Hasil akhir training menunjukan RMSE sebesar 0.1279 dan RMSE pada validation sebesar 0.1314. RMSE training dan validasi memiliki selisih yang tidak terlalu jauh yang menandakan model *good fit* dan tidak mengalami *overfitting*
 
@@ -184,7 +207,7 @@ Pada pendekatan *content-based filtering*, sistem berhasil memberikan nilai eval
 dan pada pendekatan *collaborative filtering*, diperoleh RMSE sebesar 0.1279 dan RMSE pada data validasi sebesar 0.1314 dan ketika diuji kepada pengguna, anime yang direkomendasikan rata-rata memiliki beberapa genre yang sama.
 
 
-## Referensi
+## Daftar Pustaka
 [1] [Girsang, A.S., Al Faruq, B., Herlianto, H.R. and Simbolon, S., 2020, June. Collaborative recommendation system in users of anime films. In Journal of Physics: Conference Series (Vol. 1566, No. 1, p. 012057). IOP Publishing.](https://iopscience.iop.org/article/10.1088/1742-6596/1566/1/012057/meta)
 
 [2] [Vie, J.J., Yger, F., Lahfa, R., Clement, B., Cocchi, K., Chalumeau, T. and Kashima, H., 2017, November. Using posters to recommend anime and mangas in a cold-start scenario. In 2017 14th IAPR International Conference on Document Analysis and Recognition (ICDAR) (Vol. 3, pp. 21-26). IEEE.](https://ieeexplore.ieee.org/abstract/document/8270232/)
