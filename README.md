@@ -59,13 +59,15 @@ rating - *rating* yang diberikan pengguna antara 1 sampai 10 (-1 jika pengguna s
 Dari kedua file tersebut masih terdapat data yang bernilai NaN atau null dan beberapa data duplikat. Akan dilakukan pembersihan data dengan metode yang berbeda untuk masing masing pendekatan.
 
 ### Exploratory Data Analysis
- 
+
  Pada dataset anime.csv (yang selanjutnya akan ditulis dataset anime) memiliki kolom type yang berisi data media yang digunakan untuk penayangan anime tersebut
 
+ ![Image](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/27383eab-d5bd-4879-907b-f3dfe8c986fe)
  Gambar 1. Kolom type pada dataset anime
 
  Selanjutnya pada dataset rating.csv (yang selanjutnya akan disebut dataset rating) terdapat persebaran rating dari user. Persebaran data terbanyak berada diantara nilai 7, 8, dan 9.
-
+ 
+![Image](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/83c4a31c-8e90-4e89-a913-67243232872a)
  Gambar 2. Kolom rating pada dataset rating
 
 Tabel. 1 Data statistik kolom rating pada dataset rating
@@ -126,6 +128,7 @@ Kelebihan pendekatan *content-based filtering* ini adalah dapat memberikan rekom
 
 Output dari pendekatan ini adalah Top-N anime dengan genre yang sama (beberapa judul anime memiliki nilai *cosine similarity* tertinggi)
 
+![top-N content baset filtering](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/a7cfce32-87e4-4b8b-a50b-af17bc7fd244)
 Gambar 3. Top 10 Anime yang direkomendasikan dari *keyword* "The Last: Naruto the Movie"
 
 ### *Collaborative Filtering*
@@ -138,6 +141,7 @@ Kelebihan dari *Collaborative Filtering* ini adalah kemampuannya dalam menemukan
 
 Output dari pendekatan ini adalah Top-N anime yang mirip dengan anime yang sebelumnya sudah ditonton dan diberi rating.
 
+![top n collaborative filtering](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/dc86fa9d-a51f-41b6-a79f-fc58f56ada63)
 Gambar 4. Top 10 Anime yang direkomendasikan untuk user 36391
 
 
@@ -167,6 +171,7 @@ dimana:
 - y = rating sebenarnya
 - n = jumlah data
 
+![RMSE](https://github.com/IbraHarsye/anime-recommendation-system/assets/56579824/a56ee835-75e1-4432-a45b-52ca8e10e403)
 Gambar 5. Plot Metrik Evaluasi RMSE pada Model RecommenderNet
 
 Training dilakukan sebanyak 6 epoch dikarenakan pada epoch ke 6 RMSE model meningkat dan model akan berhenti melakukan training. Hasil akhir training menunjukan RMSE sebesar 0.1279 dan RMSE pada validation sebesar 0.1314. RMSE training dan validasi memiliki selisih yang tidak terlalu jauh yang menandakan model *good fit* dan tidak mengalami *overfitting*
